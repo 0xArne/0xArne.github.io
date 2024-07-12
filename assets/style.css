@@ -1,0 +1,404 @@
+:root {
+    --background-color: #000000;
+    --text-color: white;
+    --color-gnome-red: #8a0202;
+    --button-bg-color: #ffffff;
+    --button-text-color: #000000;
+    --transition-duration: 0.1s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+body {
+    max-width: 1100px;
+    background-color: var(--background-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    color: var(--text-color);
+    background-image: url('./img/background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--text-color);
+    text-shadow: 3px 3px var(--color-gnome-red);
+    margin-bottom: 20px;
+}
+
+.header img {
+    margin: 40px;
+    height: 300px;
+    width: auto;
+}
+
+.header-right img {
+    transform: scaleX(-1);
+}
+
+.header-center {
+    margin-top: -100px;
+    flex: 1;
+}
+
+.title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 6rem;
+    margin-bottom: 5px;
+}
+
+.ticker {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    text-shadow: 2px 2px var(--color-gnome-red);
+
+}
+
+.token-address {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-top: 60px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    transition: transform var(--transition-duration) ease;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: glowEffect 2s ease-in-out infinite;
+}
+
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }d
+
+    50% {
+        box-shadow: 0 0 40px rgba(255, 255, 255, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+}
+
+.token-address:hover {
+    transform: scale(1.1);
+    color: var(--color-gnome-red);
+    animation: none;
+}
+
+.token-address svg {
+    margin-left: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform var(--transition-duration) ease;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 5px 5px var(--color-gnome-red);
+}
+
+.button svg {
+    margin-right: 5px;
+}
+
+.dex-image {
+    margin-right: 5px;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: var(--color-gnome-red);
+    color: var(--text-color);
+}
+
+.button:hover svg {
+    fill: var(--text-color);
+}
+
+.button:hover .dex-image {
+    filter: invert(100%);
+}
+
+hr {
+    border: 0;
+    height: 3px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc,  var(--color-gnome-red), #ccc);
+    margin: 60px 0;
+
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    margin: 20px;
+}
+
+.cards-section-left {
+    color: var(--text-color);
+}
+
+.cards-section-left img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.cards-section-left-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.cards-section-left-text p {
+    margin-bottom: 0;
+}
+
+.cards-section-left h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cards-section-left p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.cards-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.card {
+    background: transparent;
+    border-radius: 15px;
+    transition: transform var(--transition-duration) ease;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.dex-image {
+    border-radius: 50%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    animation: moveImage 40s linear infinite;
+    animation-delay: 0s;
+}
+
+@keyframes moveImage {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(100%);
+
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+footer img {
+    width: 50px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .header-right img {
+        display: none;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .ticker {
+        font-size: 16px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        margin: 10px 0;
+    }
+
+    .cards-section {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .cards-section-left {
+        margin-bottom: 20px;
+    }
+}
+.tokenomics {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.tokenomics h2 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.key-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.key-metrics div {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.key-metrics h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.key-metrics p {
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.roadmap {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.roadmap h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.roadmap ul {
+    color: var(--text-color);
+    list-style: none;
+    padding: 0;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform var(--transition-duration) ease;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 5px 5px var(--color-gnome-red);
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        transform: scale(1);
+        box-shadow: 5px 5px 5px var(--color-gnome-red);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 10px 10px 10px var(--color-gnome-red);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 5px 5px 5px var(--color-gnome-red);
+    }
+}
+
+.cta button:hover {
+    transform: scale(1.1);
+    background-color: var(--color-gnome-red);
+    color: var(--text-color);
+}
+
+.cta button:hover svg {
+    fill: var(--text-color);
+}
+
+.cta button:hover .dex-image {
+    filter: invert(100%);
+}
+
+
+

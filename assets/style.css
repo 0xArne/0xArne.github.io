@@ -170,10 +170,14 @@ hr {
 /* Cards Section */
 .cards-section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-items: center;
     align-items: center;
+}
+
+.cards-section.bottom {
+    grid-template-columns: repeat(4, 1fr);
 }
 .section-title {
     width: 100%;
@@ -185,8 +189,8 @@ hr {
 }
 
 .card img {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     border: 1px solid var(--playful-border-color);
     transition: transform var(--transition-duration) ease;
